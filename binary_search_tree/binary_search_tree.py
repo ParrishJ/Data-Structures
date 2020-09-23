@@ -17,20 +17,57 @@ class BSTNode:
 
     # Insert the given value into the tree
     def insert(self, value):
-        pass
+        new_node = BSTNode(value)
+       
+        if value < self.value:
+            if self.left == None:
+                self.left = new_node
+            else:
+                self.left.insert(value)
+        else:
+            if self.right == None:
+                self.right = new_node
+            else:
+                self.right.insert(value)
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-        pass
+        if self.value == target:
+            return True
+        elif target < self.value:
+            if self.left == None:
+                return False
+            else:
+                return self.left.contains(target)
+        else:
+            if self.right == None:
+                return False
+            else:
+                return self.right.contains(target)
+
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+        if self.value == None:
+            return None
+        else:
+            if self.right == None:
+                return self.value
+            else:
+                return self.right.get_max()
+            
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
-        pass
+        fn(self.value)
+
+        if self.left != None:
+            fn(self.left.value)
+
+        if self.right != None:
+            fn(self.right.value)
+            
 
     # Part 2 -----------------------
 
@@ -60,10 +97,13 @@ class BSTNode:
     def post_order_dft(self):
         pass
 
-"""
-This code is necessary for testing the `print` methods
-"""
-bst = BSTNode(1)
+    def __str__(self):
+        return f'(value: {self.value}, left: {self.left}, right: {self.right})'
+
+
+#This code is necessary for testing the `print` methods
+
+""" bst = BSTNode(1)
 
 bst.insert(8)
 bst.insert(5)
@@ -72,6 +112,9 @@ bst.insert(6)
 bst.insert(3)
 bst.insert(4)
 bst.insert(2)
+
+
+print(bst)
 
 bst.bft_print()
 bst.dft_print()
@@ -82,4 +125,4 @@ bst.pre_order_dft()
 print("in order")
 bst.in_order_dft()
 print("post order")
-bst.post_order_dft()  
+bst.post_order_dft()   """
