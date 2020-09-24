@@ -62,7 +62,7 @@ def test_for_each(self):
         self.assertTrue(v5 in arr) 
 
 
-""" def test_print_traversals(self):
+def test_print_traversals(self):
         # WARNING:  Tests are for Print()
         # Debug calls to Print() in functions will cause failure
 
