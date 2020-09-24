@@ -157,11 +157,11 @@ class BSTNode:
             current_node = s.pop()
             print(current_node)
 
-        if current_node.left:
-            s.push(current_node.left)
+            if current_node.left:
+                s.push(current_node.left)
 
-        if current_node.right:
-            s.push(current_node.right)
+            if current_node.right:
+                s.push(current_node.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
@@ -175,7 +175,7 @@ class BSTNode:
         pass
 
     def __str__(self):
-        return f'(value: {self.value}, left: {self.left}, right: {self.right})'
+        return f'(value: {self.value})'
 
 
 """
@@ -191,14 +191,13 @@ bst.insert(3)
 bst.insert(4)
 bst.insert(2)
 
-""" bst.bft_print()
-bst.dft_print() """
+#bst.bft_print()
+bst.dft_print()
 
-""" print("elegant methods")
+print("elegant methods")
 print("pre order")
-bst.pre_order_dft() """
+bst.pre_order_dft()
 print("in order")
 bst.in_order_print()
-""" print("post order")
+print("post order")
 bst.post_order_dft()  
- """
